@@ -482,11 +482,13 @@ def extremesl_project(
             )
 
     # Collect all the extremesl.nc files into an archive that can be retrieved
-    curdir_files = os.listdir(".")
+    
+    curdir_files = os.listdir(output_dir) #os.listdir(".")
+    logger.info(f"Current directory files: {curdir_files}")
     archive_files = fnmatch.filter(curdir_files, "*_extremesl.nc")
-    with tarfile.open("{}_extremesl.tgz".format(pipeline_id), "w:gz") as tar:
+    with tarfile.open("{}/{}_extremesl.tgz".format(output_dir, pipeline_id), "w:gz") as tar:
         for name in archive_files:
-            tar.add(name)
+            tar.add(os.path.join(output_dir, name))
 
     # Done
     return 0
