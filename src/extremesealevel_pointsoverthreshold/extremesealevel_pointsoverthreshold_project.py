@@ -42,6 +42,10 @@ import xarray as xr
 import fnmatch
 import tarfile
 from typing import Tuple
+import logging 
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 # from sample_from_quantiles import sample_from_quantiles
 # import pandas as pd
 # from datetime import datetime as dt
@@ -475,11 +479,14 @@ def extremesl_project(
             )
 
     # Collect all the extremesl.nc files into an archive that can be retrieved
-
-    curdir_files = os.listdir(output_dir)  # os.listdir(".")
-    archive_files = fnmatch.filter(curdir_files, "*_extremesl.nc")
-    with tarfile.open(
-        "{}/{}_extremesl.tgz".format(output_dir, pipeline_id), "w:gz"
-    ) as tar:
-        for name in archive_files:
-            tar.add(os.path.join(output_dir, name))
+    # 12-19 EM -- skipping this for now, writing .ncs 
+    #curdir_files = os.listdir(output_dir)  # os.listdir(".")
+    #archive_files = fnmatch.filter(curdir_files, "*_extremesl.nc")
+    #logger.info("archive_files: {}".format(archive_files))
+    #with tarfile.open(
+    #    "{}/{}_extremesl.tgz".format(output_dir, pipeline_id), "w:gz"
+    #) as tar:
+    #    for name in archive_files:
+    #        name_path = os.path.join(output_dir, name)  # os.path.join(".", name)
+    #        logger.info("Adding to tarfile: {}".format(name_path))
+    #        tar.add(name_path)
