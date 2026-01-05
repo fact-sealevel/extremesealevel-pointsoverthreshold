@@ -39,10 +39,8 @@ import time
 import numpy.matlib
 import numpy as np
 import xarray as xr
-import fnmatch
-import tarfile
 from typing import Tuple
-import logging 
+import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -479,13 +477,13 @@ def extremesl_project(
             )
 
     # Collect all the extremesl.nc files into an archive that can be retrieved
-    # 12-19 EM -- skipping this for now, writing .ncs 
-    #curdir_files = os.listdir(output_dir)  # os.listdir(".")
-    #archive_files = fnmatch.filter(curdir_files, "*_extremesl.nc")
-    #logger.info("archive_files: {}".format(archive_files))
-    #with tarfile.open(
+    # 12-19 EM -- skipping this for now, writing .ncs
+    # curdir_files = os.listdir(output_dir)  # os.listdir(".")
+    # archive_files = fnmatch.filter(curdir_files, "*_extremesl.nc")
+    # logger.info("archive_files: {}".format(archive_files))
+    # with tarfile.open(
     #    "{}/{}_extremesl.tgz".format(output_dir, pipeline_id), "w:gz"
-    #) as tar:
+    # ) as tar:
     #    for name in archive_files:
     #        name_path = os.path.join(output_dir, name)  # os.path.join(".", name)
     #        logger.info("Adding to tarfile: {}".format(name_path))
