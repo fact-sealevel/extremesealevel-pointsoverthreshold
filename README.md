@@ -10,9 +10,6 @@ Code by Tim Hermans
 
 First, clone the repo, download required input data and prepare for the run, like:
 ```shell
-git clone --single-branch --branch package git@github.com:e-marshall/extremesealevel-pointsoverthreshold`
-# ^^ for now
-# eventually:
 git clone git@github.com:fact-sealevel/extremesealevel-pointsoverthreshold
 
 mkdir -p ./data/input
