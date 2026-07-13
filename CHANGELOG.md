@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] 
 
+### Added
+
+- Add support for arm64 to image in container registry ([PR #5](https://github.com/fact-sealevel/extremesealevel-pointsoverthreshold/pull/5), [@-emarshall](https://github.com/e-marshall))
 
 
 ## [0.1.0] - 2026-01-05
